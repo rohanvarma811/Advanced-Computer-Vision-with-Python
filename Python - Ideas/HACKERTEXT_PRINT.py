@@ -1,8 +1,8 @@
 from time import sleep
 import random
 
-palabra = "Hello world"
-abc = list(' abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
+palabra = input(str('Enter the String you want to appear as Hacker Animation : '))
+abc = list('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ')
 txt = ""
 
 j = 0
