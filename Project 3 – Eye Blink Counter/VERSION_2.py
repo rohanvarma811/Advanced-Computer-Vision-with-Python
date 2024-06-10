@@ -1,4 +1,10 @@
-# PROBLEM FIXED : adjusted the beep duration to 1000 milliseconds for a longer alert sound, modified the beeping logic to ensure continuous beeping as long as the eye closure persists.
+# Feature Working Plays a Sound When the Eyes is Closed and the Graph is in -ve Area 
+
+# NOTE: THE BLINKING MAY NOT BE ACCURATE DUE TO LACK OF BRIGHTNESS AND OTHER FACTORS LIKE EYE-SIZE AND EVEN MORE. 
+# THAT SHOULD BE CONSIDERED AND OPTIMISED FURTHER ACCORDINGLY IN THE FUTURE DRIVING UPDATES FOR THE SAFETY FOR THE DRIVER
+
+# UPDATE : Beeping Logic, Blink Counter Increment, Alert Timing
+# FIXED : Continuous Beeping, Reset Alert Flag, Controlled Blink Counter
 
 import cv2
 import cvzone
@@ -7,17 +13,20 @@ import time
 from cvzone.FaceMeshModule import FaceMeshDetector
 from cvzone.PlotModule import LivePlot
 
+
 cap = cv2.VideoCapture(0)
 detector = FaceMeshDetector(maxFaces=1)
 plotY = LivePlot(640, 360, [20, 50], invert=True)
+
 
 idList = [22, 23, 24, 26, 110, 157, 158, 159, 160, 161, 130, 243]
 ratioList = []
 blinkCounter = 0
 color = (255, 0, 255)
-alert_threshold = 2  # Threshold in seconds to trigger alert
+alert_sound_played = False
+alert_threshold = 3  # Threshold in seconds to trigger alert
 last_blink_time = time.time()
-beep_duration = 1000  # Duration of the beep sound in milliseconds
+
 
 while True:
     if cap.get(cv2.CAP_PROP_POS_FRAMES) == cap.get(cv2.CAP_PROP_FRAME_COUNT):
@@ -47,15 +56,15 @@ while True:
         if ratioAvg < 35:
             blinkCounter += 1
             current_time = time.time()
-            if current_time - last_blink_time >= alert_threshold:
-                winsound.Beep(1000, beep_duration)
-                last_blink_time = current_time  # Reset the timer after alert
+            if current_time - last_blink_time >= alert_threshold and not alert_sound_played:
+                winsound.Beep(1000, 500)
+                alert_sound_played = True
         else:
             last_blink_time = time.time()
+            alert_sound_played = False
 
-        color = (0, 200, 0) if ratioAvg < 35 else (255, 0, 255)
-
-        # cvzone.putTextRect(img, f'Blink Count: {blinkCounter}', (50, 100), colorR=color)
+        cvzone.putTextRect(img, f'Blink Count: {blinkCounter}', (50, 100),
+                           colorR=color)
 
         imgPlot = plotY.update(ratioAvg, color)
         img = cv2.resize(img, (640, 360))
