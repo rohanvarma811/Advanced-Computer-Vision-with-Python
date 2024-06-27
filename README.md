@@ -42,4 +42,4 @@ pip install pygame
 - Ensure that the video file for the alert is present in the specified path or adjust the path accordingly.
 
 ## Contributors
-- Rohan Varma ([https://github.com/your_username](https://github.com/rohanvarma811))
+- Rohan Varma ([https://github.com/rohanvarma811](https://github.com/rohanvarma811))
