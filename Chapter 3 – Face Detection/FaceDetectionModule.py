@@ -52,7 +52,7 @@ class FaceDetector():
 
 
 def main():
-    cap = cv2.VideoCapture("Free people expression footage  mad shocked surprised wow amazed face    NO COPYRIGHT VIDEOS.mp4")
+    cap = cv2.VideoCapture("Chapter 3 – Face Detection\Free people expression footage  mad shocked surprised wow amazed face    NO COPYRIGHT VIDEOS.mp4")
     if not cap.isOpened():
         print("Error: Could not open video file.")
         return

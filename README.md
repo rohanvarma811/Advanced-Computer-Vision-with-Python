@@ -1,7 +1,6 @@
 # Python - Projects
 This is a Repository For Python Based Projects
 
-
 # Blink Alert System
 
 ## Overview
@@ -40,6 +39,9 @@ pip install pygame
 - Upon running the script, the webcam will activate, and the blink detection process will begin.
 - Adjust the blink detection threshold in the code according to your preferences.
 - Ensure that the video file for the alert is present in the specified path or adjust the path accordingly.
+
+## Usage
+![Demo](https://github.com/user-attachments/assets/4698df51-652c-479b-94c4-d054ffc169c4)
 
 ## Contributors
 - Rohan Varma ([https://github.com/your_username](https://github.com/rohanvarma811))

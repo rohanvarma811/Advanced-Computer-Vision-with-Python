@@ -36,7 +36,7 @@ class FaceMeshDetector:
         return img, faces
 
 def main():
-    cap = cv2.VideoCapture("Free people expression footage  mad shocked surprised wow amazed face    NO COPYRIGHT VIDEOS.mp4")
+    cap = cv2.VideoCapture("Chapter 4 – Face Mesh\Free people expression footage  mad shocked surprised wow amazed face    NO COPYRIGHT VIDEOS.mp4")
     if not cap.isOpened():
         print("Error: Could not open video file.")
         return
