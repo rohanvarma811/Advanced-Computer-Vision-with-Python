@@ -44,4 +44,4 @@ pip install pygame
 ![Demo](https://github.com/user-attachments/assets/4698df51-652c-479b-94c4-d054ffc169c4)
 
 ## Contributors
-- Rohan Varma ([https://github.com/your_username](https://github.com/rohanvarma811))
+- Rohan Varma ([https://github.com/rohanvarma811](https://github.com/rohanvarma811))
