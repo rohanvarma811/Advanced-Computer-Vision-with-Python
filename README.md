@@ -40,7 +40,7 @@ pip install pygame
 - Adjust the blink detection threshold in the code according to your preferences.
 - Ensure that the video file for the alert is present in the specified path or adjust the path accordingly.
 
-## Usage
+## Demo
 ![Demo](https://github.com/user-attachments/assets/4698df51-652c-479b-94c4-d054ffc169c4)
 
 ## Contributors
